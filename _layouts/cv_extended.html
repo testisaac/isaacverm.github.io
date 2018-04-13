@@ -1,0 +1,27 @@
+---
+layout: cv_selection
+---
+
+{% assign cv_headers = site.data.cv_headers %}
+{% assign contact_info = site.data.contact_information %}
+
+<h1>CV</h1>
+
+<h2>{{ cv_headers.contact_information[page.language] }}</h2>
+
+{% assign contact_fields = "name,mail,phone,github" | split: ',' %}
+
+{% for field in contact_fields %}
+    {% if page.language == "english" %}
+        <dd>{{ field }}</dd>
+    {% else %}
+        <dd>{{ contact_info[page.language][field] }}</dd>
+    {% endif %}
+    
+    <dt>{{ contact_info.values[field] }}</dt>
+{% endfor %}
+
+<h2>About me</h2>
+{{ cv.about }}
+
+{{ content }}

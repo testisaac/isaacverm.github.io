@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<h1>Available versions of CV</h1>
+
+<ul>
+<!–sizes available–> 
+{% for size in site.data.cv_versions.sizes %}
+    <li>
+        <a>{{ size }}</a>
+        <ul>
+            <!–languages available–>
+            {% for language in site.data.cv_versions.languages %}
+                {% assign concat_href = size | prepend: "cv_" | append: "_" | append: language %}  
+                <li><a href="{{ concat_href }}">{{ language | capitalize }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>
+
+{{ content }}

@@ -1,6 +1,6 @@
 - name: about
   description: what can be found on this website
-- name: cv
+- name: cv_overview
   description: curriculum vitae in several languages and in both a simplified and extended version
 - name: projects
   description: small summary of each project I've been working on

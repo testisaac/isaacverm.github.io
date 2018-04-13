@@ -14,25 +14,7 @@
         {% for part in site.data.site_parts %}
             <ul>
                 <li>
-                    <a> {{ part.name }} </a>
-                        <ul>
-                            <!–some parts are divided in subparts–>
-                            {% case part.name %}
-                                {% when "projects" %}
-                                    {% for project in site.data.projects %}
-                                        <li>
-                                            <a> {{ project.name }} </a>
-                                        </li>
-                                    {% endfor %}
-                                {% when "cv" %}
-                                    {% assign versions = site.data.cv.versions| split: "," %}
-                                    {% for version in versions %}
-                                        <li>
-                                            <a> {{ version }} </a>
-                                        </li>
-                                    {% endfor %}
-                            {% endcase %}
-                        </ul>
+                    <a href="{{part.name}}"> {{ part.name }} </a>
                 </li>
             </ul>
         {% endfor %}
