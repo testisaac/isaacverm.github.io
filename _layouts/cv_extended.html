@@ -9,6 +9,7 @@ layout: cv_selection
 {% assign experience = site.data.experience %}
 {% assign languages = site.data.languages %}
 {% assign technical = site.data.technical %}
+{% assign certificates = site.data.certificates %}
 
 <h1>CV</h1>
 
@@ -104,20 +105,26 @@ layout: cv_selection
 <!–TECHNICAL–>
 <h2>{{ cv_headers.technical[page.language] }}</h2>
 
+{% assign disciplines = "data_analysis,test_automation" | split: ',' %}
+
 <ul>
-    <li>{{ cv_headers.data_analysis[page.language] }}</li>
+{% for discipline in disciplines %}
+    <li>{{ cv_headers[discipline][page.language] }}</li>
     <ul>
-    {% for skill in technical["data_analysis"] %}
+    {% for skill in technical[discipline] %}
         <li>{{ skill }}</li>
     {% endfor %}
     </ul>
-    
-    <li>{{ cv_headers.test_automation[page.language] }}</li>
-    <ul>
-    {% for skill in technical["test_automation"] %}
-        <li>{{ skill }}</li>
-    {% endfor %}
-    </ul>
+{% endfor %}
+</ul>
+
+<!–CERTIFICATES–>
+<h2>{{ cv_headers.certificates[page.language] }}</h2>
+
+<ul>
+{% for certificate in certificates %}
+    <li>{{ certificate }}</li>
+{% endfor %}
 </ul>
 
 {{ content }}

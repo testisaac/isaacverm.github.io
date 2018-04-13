@@ -43,3 +43,8 @@ test_automation:
   english: test automation
   dutch: testautomatisatie
   portuguese: automoção de testes
+  
+certificates:
+  english: certificates
+  dutch: certificaten
+  portuguese: certificados
