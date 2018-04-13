@@ -13,4 +13,14 @@ education:
   english: education
   dutch: opleiding
   portuguese: educação
+  
+experience:
+  english: experience
+  dutch: ervaring
+  portuguese: experiência
+  
+tasks:
+  english: tasks
+  dutch: taken
+  portuguese: tarefas
     

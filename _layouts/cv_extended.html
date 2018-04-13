@@ -6,6 +6,7 @@ layout: cv_selection
 {% assign contact_info = site.data.contact_information %}
 {% assign about = site.data.about %}
 {% assign education = site.data.education %}
+{% assign experience = site.data.experience %}
 
 <h1>CV</h1>
 
@@ -34,19 +35,54 @@ layout: cv_selection
 {% assign degrees = "bachelor_economics,master_economics,political_science" | split: ',' %}
 
 <ul>
-{% for degree in degrees %}
-    <li>
-        <a>{{ education.degree[degree][page.language] }}</a>
-        <ul>
-            <li>{{ education.period[degree] }}</li>
-            <li>{{ education.university[degree] }}</li>
-            {% assign description = education.description[degree][page.language] %}
-            {% if description.size > 0 %}
-              <li>{{ description }}</li>
-            {% endif %}
-        </ul>
-    </li>
-{% endfor %}
+    {% for degree in degrees %}
+        <li>
+            <a>{{ education.degree[degree][page.language] }}</a>
+            <ul>
+                <li>{{ education.period[degree] }}</li>
+                <li>{{ education.university[degree] }}</li>
+                {% assign description = education.description[degree][page.language] %}
+                {% if description.size > 0 %}
+                  <li>{{ description }}</li>
+                {% endif %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+
+<!–EXPERIENCE–>
+<h2>{{ cv_headers.experience[page.language] }}</h2>
+
+{% assign employers = "sogeti,dehama" | split: ',' %}
+
+<ul>
+    {% for employer in employers %}
+        <li>
+            <a>{{ experience.job[employer][page.language] }}, {{ employer }}</a>
+            <ul>
+                <li>{{ experience.period[employer] }}</li>
+                <li>{{ cv_headers.tasks[page.language] }}
+                    <ul>
+                        <!–MAIN TASKS–>
+                        {% assign main_tasks = experience.tasks[employer][page.language] %}
+                        {% for task in main_tasks %}
+                            <li>{{ task }}</li>
+                            
+                            <!–SUBTASKS–>
+                            {% assign subtasks = experience.subtasks[employer][page.language][task] %}
+                            {% if subtasks.size > 0 %}
+                                <ul>
+                                    {% for subtask in subtasks %}
+                                        <li>{{ subtask }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    {% endfor %}
 </ul>
 
 {{ content }}

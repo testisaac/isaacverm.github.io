@@ -1,1 +1,16 @@
+                        <!–MAIN TASKS–>
+                            {% for task in tasks %}
+                                {% for subtask in task %}
+                                <li>{{ subtask[0] }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        <!–SUBTASKS–>
 
+      - write test strategy:
+        - decide how to implement testing framework
+        - detail entry and exit criteria
+        - detail communication test output
+      - write automated tests:
+        - UI and REST
+        - Behaviour Driven Development
+        - exploratory testing

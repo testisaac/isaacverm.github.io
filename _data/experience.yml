@@ -1,0 +1,67 @@
+period:
+  sogeti: 08/2015-03/2018
+  dehama: 01/2015-08/2015
+
+job:
+  sogeti:
+    english: test automation
+    dutch: testautomatisatie
+    portuguese: automação de testes
+  dehama:
+    english: accountancy
+    dutch: boekhouding
+    portuguese: contabilidade
+
+tasks:
+  sogeti:
+    english:
+      - write test strategy
+      - write automated tests
+      - exploratory testing
+    dutch:
+      - teststrategie uitschrijven
+      - schrijven automatische tests
+      - exploratory testing
+    portuguese:
+      - escrever estratégias de testes
+      - escrever automoção de testes
+      - teste exploratório
+  dehama:
+    english:
+      - basic annual reports
+      - filing tax forms
+    dutch:
+      - eenvoudige jaarrekeningen
+      - invullen belastingsformulieren
+    portuguese:  
+      - relatórios anuais
+      - preenchimento de declaração de Imposto de Renda
+     
+#normally subtasks would have english key but implementation is too tightly coupled
+subtasks:
+  sogeti:
+    english:
+      write test strategy:
+        - implementation testing framework
+        - detail entry and exit criteria
+        - detail communication test output
+      write automated tests:
+        - UI and REST
+        - Behaviour Driven Development
+    dutch:
+      teststrategie uitschrijven:
+        - implementatie testing framework
+        - detailleren entry- en exitcriteria
+        - communicatie testresultaten
+      schrijven automatische tests:
+        - UI en REST
+        - Behaviour Driven Development
+    portuguese:
+      escrever estratégias de testes:
+        - decidir como implementar testes de framework
+        - critérios de entrada e saída
+        - comunicação de saída de teste
+      escrever automoção de testes:
+        - UI e REST
+        - Behaviour Driven Development
+      
