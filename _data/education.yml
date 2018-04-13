@@ -1,0 +1,33 @@
+period: 
+  bachelor_economics: 2012-2015
+  master_economics: 2015-2017
+  political_science: 2009-2011
+  
+university:  
+  bachelor_economics: Odisee
+  master_economics: Odisee
+  political_science: VUB
+  
+degree:
+  bachelor_economics:
+    english: Bachelor in Business Administration
+    dutch: Bachelor Handelswetenschappen
+    portuguese: Graduação em Administração de Negócios
+  master_economics:
+    english: Master in Business Administration
+    dutch: Master Handelswetenschappen
+    portuguese: Mestrado em Administração de Negócios
+  political_science:
+    english: Bachelor in Political Science
+    dutch: Bachelor Politieke Wetenschappen
+    portuguese: Graduação em Ciência Política
+    
+description:
+  master_economics:
+    english: thesis on KNN classification odds tennis gambling market
+    dutch: thesis over KNN classificatie odds in de tennisgokmarkt
+    portuguese: TCC em KNN classification odds tennis gambling market
+  political_science:
+    english: first two years completed
+    dutch: eerste twee jaar afgewerkt
+    portuguese: dois primeiros anos completos

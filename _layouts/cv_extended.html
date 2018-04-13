@@ -4,9 +4,12 @@ layout: cv_selection
 
 {% assign cv_headers = site.data.cv_headers %}
 {% assign contact_info = site.data.contact_information %}
+{% assign about = site.data.about %}
+{% assign education = site.data.education %}
 
 <h1>CV</h1>
 
+<!–CONTACT INFORMATION–>
 <h2>{{ cv_headers.contact_information[page.language] }}</h2>
 
 {% assign contact_fields = "name,mail,phone,github" | split: ',' %}
@@ -21,7 +24,29 @@ layout: cv_selection
     <dt>{{ contact_info.values[field] }}</dt>
 {% endfor %}
 
-<h2>About me</h2>
-{{ cv.about }}
+<!–ABOUT–>
+<h2>{{ cv_headers.about[page.language] }}</h2>
+{{ about[page.language] }}
+
+<!–EDUCATION–>
+<h2>{{ cv_headers.education[page.language] }}</h2>
+
+{% assign degrees = "bachelor_economics,master_economics,political_science" | split: ',' %}
+
+<ul>
+{% for degree in degrees %}
+    <li>
+        <a>{{ education.degree[degree][page.language] }}</a>
+        <ul>
+            <li>{{ education.period[degree] }}</li>
+            <li>{{ education.university[degree] }}</li>
+            {% assign description = education.description[degree][page.language] %}
+            {% if description.size > 0 %}
+              <li>{{ description }}</li>
+            {% endif %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>
 
 {{ content }}

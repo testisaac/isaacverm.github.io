@@ -3,3 +3,14 @@ contact_information:
   french: coordonnées
   dutch: contact
   portuguese: contato
+
+about:
+  english: about me
+  dutch: over mij
+  portuguese: sobre mim
+    
+education:
+  english: education
+  dutch: opleiding
+  portuguese: educação
+    
