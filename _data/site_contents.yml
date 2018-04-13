@@ -1,8 +1,0 @@
-- name: about
-  description: What can be found on this website.
-- name: cv
-  description: Curriculum vitae in several languages and in both a simplified and extended version.
-- name: projects
-  description: Small summary of each project I've been working on.
-- name: blog
-  description: Notes on diverse topics.

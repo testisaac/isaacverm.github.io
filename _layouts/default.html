@@ -8,35 +8,34 @@
 </head>
 
 <body>
+    
     <nav>
-        <ul>
-            <li>
-                <a>about</a>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <a>cv</a>
-                <ul>
-                    <li>simplified</li>
-                    <li>extended</li>
-                </ul>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <a>projects</a>
-                <ul>
-                    <li>marriage</li>
-                    <li>penalty</li>
-                </ul>
-            </li>
-        </ul>
-        <ul>
-            <li>
-                <a></a>">blog</a>
-            </li>
-        </ul>
+        <!–create the first level for each part–>
+        {% for part in site.data.site_parts %}
+            <ul>
+                <li>
+                    <a> {{ part.name }} </a>
+                        <ul>
+                            <!–some parts are divided in subparts–>
+                            {% case part.name %}
+                                {% when "projects" %}
+                                    {% for project in site.data.projects %}
+                                        <li>
+                                            <a> {{ project.name }} </a>
+                                        </li>
+                                    {% endfor %}
+                                {% when "cv" %}
+                                    {% assign versions = site.data.cv.versions| split: "," %}
+                                    {% for version in versions %}
+                                        <li>
+                                            <a> {{ version }} </a>
+                                        </li>
+                                    {% endfor %}
+                            {% endcase %}
+                        </ul>
+                </li>
+            </ul>
+        {% endfor %}
     </nav>
     
     {{ content }}

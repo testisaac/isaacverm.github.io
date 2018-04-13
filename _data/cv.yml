@@ -1,0 +1,13 @@
+versions: simplified,extended
+
+contact_information:
+  - key: name
+    value: Isaac Verminck
+  - key: email
+    value: isaacverm@gmail.com
+  - key: phone
+    value: +32 473 57 04 00
+  - key: github
+    value: https://github.com/IsaacVerm
+    
+about: Studied economics in university doing my master’s thesis on data classification techniques. Later on I started working in test automation.
