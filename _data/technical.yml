@@ -1,0 +1,10 @@
+data_analysis:
+  - R
+  - SQL
+  - Python (basic)
+
+test_automation:
+  - Ruby
+  - RSpec
+  - Cucumber
+  - Capybara

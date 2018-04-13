@@ -23,4 +23,23 @@ tasks:
   english: tasks
   dutch: taken
   portuguese: tarefas
+  
+languages:
+  english: languages
+  dutch: talen
+  portuguese: idiomas
     
+technical:
+  english: technical
+  dutch: technisch
+  portuguese: conhecimentos de informática
+  
+data_analysis:
+  english: data analysis
+  dutch: data-analyse
+  portuguese: análise de dados
+  
+test_automation:
+  english: test automation
+  dutch: testautomatisatie
+  portuguese: automoção de testes

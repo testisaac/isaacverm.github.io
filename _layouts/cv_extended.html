@@ -7,6 +7,8 @@ layout: cv_selection
 {% assign about = site.data.about %}
 {% assign education = site.data.education %}
 {% assign experience = site.data.experience %}
+{% assign languages = site.data.languages %}
+{% assign technical = site.data.technical %}
 
 <h1>CV</h1>
 
@@ -15,6 +17,7 @@ layout: cv_selection
 
 {% assign contact_fields = "name,mail,phone,github" | split: ',' %}
 
+<dl>
 {% for field in contact_fields %}
     {% if page.language == "english" %}
         <dd>{{ field }}</dd>
@@ -24,6 +27,7 @@ layout: cv_selection
     
     <dt>{{ contact_info.values[field] }}</dt>
 {% endfor %}
+</dl>
 
 <!–ABOUT–>
 <h2>{{ cv_headers.about[page.language] }}</h2>
@@ -83,6 +87,37 @@ layout: cv_selection
             </ul>
         </li>
     {% endfor %}
+</ul>
+
+<!–LANGUAGES–>
+<h2>{{ cv_headers.languages[page.language] }}</h2>
+
+{% assign proficiency = languages.proficiency[page.language] %}
+
+<dl>
+{% for pro in proficiency %}
+    <dd>{{ pro[0] }}</dd>
+    <dt>{{ pro[1] }}</dt>
+{% endfor %}
+</dl>
+
+<!–TECHNICAL–>
+<h2>{{ cv_headers.technical[page.language] }}</h2>
+
+<ul>
+    <li>{{ cv_headers.data_analysis[page.language] }}</li>
+    <ul>
+    {% for skill in technical["data_analysis"] %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+    </ul>
+    
+    <li>{{ cv_headers.test_automation[page.language] }}</li>
+    <ul>
+    {% for skill in technical["test_automation"] %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+    </ul>
 </ul>
 
 {{ content }}
